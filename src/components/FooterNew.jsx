@@ -7,7 +7,7 @@ const FooterNew = () => {
             <p style={{ fontSize: '15px', fontWeight: '600', color: '#171717', marginBottom: '8px' }}>ATEX Conference 2026</p>
             <p style={{ fontSize: '13px', color: '#737373', marginBottom: '16px' }}>Internal Pitch Deck for Speaker Selection</p>
             <p style={{ fontSize: '13px', color: '#a3a3a3' }}>
-              Contact: <span style={{ color: '#525252' }}>Wilson</span> (direct for both speakers)
+              Contact: <span style={{ color: '#525252' }}>Wilson</span> via Mena Speakers Agency
             </p>
           </div>
 

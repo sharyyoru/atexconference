@@ -86,7 +86,7 @@ const InvestmentSection = () => {
 
               <div style={{ marginTop: '16px', padding: '16px', backgroundColor: '#fafafa', borderRadius: '12px' }}>
                 <p style={{ fontSize: '13px', color: '#525252' }}>
-                  <span style={{ fontWeight: '500' }}>Contact:</span> Wilson (direct for both speakers, no agents)
+                  <span style={{ fontWeight: '500' }}>Contact:</span> Wilson via Mena Speakers Agency
                 </p>
               </div>
             </div>
