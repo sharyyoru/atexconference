@@ -1,65 +1,43 @@
-import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 const HeroNew = () => {
   return (
-    <section className="min-h-[85vh] flex flex-col justify-center pt-12 pb-16 bg-[#fafafa]">
-      <div className="max-w-6xl mx-auto px-6 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          className="text-center"
-        >
-          <p className="text-[13px] text-neutral-500 tracking-wide mb-4">
-            ATEX Conference 2026
-          </p>
-          
-          <h1 className="text-[clamp(2.5rem,8vw,5rem)] font-semibold text-neutral-900 tracking-tight leading-[1.05] mb-6">
-            Speaker Showcase
-          </h1>
-          
-          <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-500 max-w-xl mx-auto leading-relaxed mb-12">
-            Two exceptional keynote speakers. One powerful event.
-            <br className="hidden sm:block" />
-            Compare their expertise and value.
-          </p>
+    <section style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: '60px', paddingBottom: '40px', backgroundColor: '#fafafa' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', width: '100%', textAlign: 'center' }}>
+        <p style={{ fontSize: '13px', color: '#737373', marginBottom: '16px', letterSpacing: '0.5px' }}>
+          ATEX Conference 2026
+        </p>
+        
+        <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontWeight: '600', color: '#171717', letterSpacing: '-0.02em', lineHeight: '1.1', marginBottom: '20px' }}>
+          Speaker Showcase
+        </h1>
+        
+        <p style={{ fontSize: '18px', color: '#737373', maxWidth: '500px', margin: '0 auto 48px', lineHeight: '1.6' }}>
+          Two exceptional keynote speakers. One powerful event.<br />
+          Compare their expertise and value.
+        </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-16">
-            <div className="flex items-center gap-8">
-              <div className="text-center">
-                <div className="text-[2rem] sm:text-[2.5rem] font-semibold text-neutral-900">85K+</div>
-                <div className="text-[13px] text-neutral-500">Global Reach</div>
-              </div>
-              <div className="w-px h-12 bg-neutral-200 hidden sm:block" />
-              <div className="text-center">
-                <div className="text-[2rem] sm:text-[2.5rem] font-semibold text-neutral-900">750+</div>
-                <div className="text-[13px] text-neutral-500">Leaders Interviewed</div>
-              </div>
-              <div className="w-px h-12 bg-neutral-200 hidden sm:block" />
-              <div className="text-center">
-                <div className="text-[2rem] sm:text-[2.5rem] font-semibold text-neutral-900">Dubai</div>
-                <div className="text-[13px] text-neutral-500">Both Based</div>
-              </div>
-            </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '48px', marginBottom: '48px', flexWrap: 'wrap' }}>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '2.5rem', fontWeight: '600', color: '#171717' }}>85K+</div>
+            <div style={{ fontSize: '13px', color: '#737373' }}>Global Reach</div>
           </div>
+          <div style={{ width: '1px', height: '48px', backgroundColor: '#e5e5e5' }} />
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '2.5rem', fontWeight: '600', color: '#171717' }}>750+</div>
+            <div style={{ fontSize: '13px', color: '#737373' }}>Leaders Interviewed</div>
+          </div>
+          <div style={{ width: '1px', height: '48px', backgroundColor: '#e5e5e5' }} />
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '2.5rem', fontWeight: '600', color: '#171717' }}>Dubai</div>
+            <div style={{ fontSize: '13px', color: '#737373' }}>Both Based</div>
+          </div>
+        </div>
 
-          <motion.a
-            href="#comparison"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="inline-flex flex-col items-center text-neutral-400 hover:text-neutral-600 transition-colors"
-          >
-            <span className="text-[13px] mb-2">Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-            >
-              <ChevronDown className="w-5 h-5" />
-            </motion.div>
-          </motion.a>
-        </motion.div>
+        <a href="#comparison" style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', color: '#a3a3a3', textDecoration: 'none' }}>
+          <span style={{ fontSize: '13px', marginBottom: '8px' }}>Scroll to explore</span>
+          <ChevronDown style={{ width: '20px', height: '20px' }} />
+        </a>
       </div>
     </section>
   );

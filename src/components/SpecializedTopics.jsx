@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion';
-
 const SpecializedTopics = () => {
   const speakers = [
     {
       name: "Jos Dirkx",
       specialty: "Education & AI Integration",
-      color: "blue",
+      color: "#3b82f6",
+      bgColor: "#eff6ff",
       description: "Jos specializes in transforming education through AI integration. Her Human+ Era framework prepares educators, students, and institutions for an AI-augmented future while maintaining human creativity at the core.",
       topics: [
         { title: "AI Ethics in Education", desc: "Responsible AI integration in learning environments" },
@@ -19,7 +18,8 @@ const SpecializedTopics = () => {
     {
       name: "James Taylor",
       specialty: "HR Innovation & Creativity",
-      color: "emerald",
+      color: "#10b981",
+      bgColor: "#ecfdf5",
       description: "James leads the conversation on SuperCollaboration—human-AI teamwork in the workplace. His expertise helps HR departments and innovation teams unlock creative potential through structured collaboration frameworks.",
       topics: [
         { title: "SuperCollaboration Framework", desc: "High-performance teams with human creativity and AI" },
@@ -33,81 +33,58 @@ const SpecializedTopics = () => {
   ];
 
   return (
-    <section id="topics" className="py-20 md:py-32 bg-[#fafafa]">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-semibold text-neutral-900 tracking-tight mb-4">
+    <section id="topics" style={{ backgroundColor: '#fafafa', padding: '80px 0' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', fontWeight: '600', color: '#171717', marginBottom: '12px' }}>
             Specialized Expertise
           </h2>
-          <p className="text-neutral-500 max-w-lg mx-auto">
+          <p style={{ fontSize: '16px', color: '#737373' }}>
             Deep dive into each speaker's focus areas and ideal audience
           </p>
-        </motion.div>
+        </div>
 
-        <div className="space-y-8">
-          {speakers.map((speaker, index) => (
-            <motion.div
-              key={speaker.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 md:p-10"
-            >
-              <div className="grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-12">
-                {/* Left - Speaker Info */}
-                <div>
-                  <div className={`inline-block px-3 py-1 rounded-full text-[12px] font-medium mb-4 ${
-                    speaker.color === 'blue' ? 'bg-blue-50 text-blue-600' : 'bg-emerald-50 text-emerald-600'
-                  }`}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          {speakers.map((speaker) => (
+            <div key={speaker.name} style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '40px' }}>
+              <div style={{ display: 'flex', gap: '48px', flexWrap: 'wrap' }}>
+                {/* Left */}
+                <div style={{ flex: '1', minWidth: '280px' }}>
+                  <span style={{ display: 'inline-block', padding: '4px 12px', backgroundColor: speaker.bgColor, color: speaker.color, borderRadius: '16px', fontSize: '12px', fontWeight: '500', marginBottom: '16px' }}>
                     {speaker.specialty}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-neutral-900 mb-4">{speaker.name}</h3>
-                  <p className="text-[15px] text-neutral-600 leading-relaxed mb-6">
+                  </span>
+                  <h3 style={{ fontSize: '24px', fontWeight: '600', color: '#171717', marginBottom: '16px' }}>{speaker.name}</h3>
+                  <p style={{ fontSize: '15px', color: '#525252', lineHeight: '1.6', marginBottom: '24px' }}>
                     {speaker.description}
                   </p>
-                  
-                  <div className={`border-l-2 ${speaker.color === 'blue' ? 'border-blue-500' : 'border-emerald-500'} pl-4`}>
-                    <p className="text-[14px] text-neutral-600 italic">"{speaker.quote}"</p>
+                  <div style={{ borderLeft: `2px solid ${speaker.color}`, paddingLeft: '16px' }}>
+                    <p style={{ fontSize: '14px', color: '#525252', fontStyle: 'italic' }}>"{speaker.quote}"</p>
                   </div>
                 </div>
 
-                {/* Right - Topics & Audience */}
-                <div>
-                  <h4 className="text-[13px] font-medium text-neutral-400 uppercase tracking-wider mb-4">Key Topics</h4>
-                  <div className="grid grid-cols-2 gap-3 mb-8">
+                {/* Right */}
+                <div style={{ flex: '1.5', minWidth: '320px' }}>
+                  <p style={{ fontSize: '12px', fontWeight: '500', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '16px' }}>Key Topics</p>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', marginBottom: '24px' }}>
                     {speaker.topics.map((topic, i) => (
-                      <div key={i} className="p-4 bg-neutral-50 rounded-xl">
-                        <h5 className="text-[14px] font-medium text-neutral-900 mb-1">{topic.title}</h5>
-                        <p className="text-[13px] text-neutral-500">{topic.desc}</p>
+                      <div key={i} style={{ padding: '16px', backgroundColor: '#fafafa', borderRadius: '12px' }}>
+                        <p style={{ fontSize: '14px', fontWeight: '500', color: '#171717', marginBottom: '4px' }}>{topic.title}</p>
+                        <p style={{ fontSize: '13px', color: '#737373' }}>{topic.desc}</p>
                       </div>
                     ))}
                   </div>
 
-                  <h4 className="text-[13px] font-medium text-neutral-400 uppercase tracking-wider mb-3">Ideal Audience</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <p style={{ fontSize: '12px', fontWeight: '500', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px' }}>Ideal Audience</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                     {speaker.audience.map((item, i) => (
-                      <span 
-                        key={i}
-                        className={`px-3 py-1.5 rounded-full text-[13px] ${
-                          speaker.color === 'blue' 
-                            ? 'bg-blue-50 text-blue-700' 
-                            : 'bg-emerald-50 text-emerald-700'
-                        }`}
-                      >
+                      <span key={i} style={{ padding: '6px 12px', backgroundColor: speaker.bgColor, color: speaker.color, borderRadius: '16px', fontSize: '13px' }}>
                         {item}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

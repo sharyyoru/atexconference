@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const ProfileComparison = () => {
   const metrics = [
     { label: "Global Reach", jos: 95, james: 85 },
@@ -9,161 +7,109 @@ const ProfileComparison = () => {
     { label: "Engagement", jos: 95, james: 90 },
   ];
 
+  const containerStyle = { maxWidth: '1000px', margin: '0 auto', padding: '80px 24px' };
+  const headingStyle = { textAlign: 'center', marginBottom: '64px' };
+  const h2Style = { fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', fontWeight: '600', color: '#171717', marginBottom: '12px' };
+  const subtitleStyle = { fontSize: '16px', color: '#737373' };
+
   return (
-    <section id="comparison" className="py-20 md:py-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-semibold text-neutral-900 tracking-tight mb-4">
-            Compare Speakers
-          </h2>
-          <p className="text-neutral-500 max-w-lg mx-auto">
-            Side-by-side analysis of qualifications, reach, and value
-          </p>
-        </motion.div>
+    <section id="comparison" style={{ backgroundColor: '#ffffff' }}>
+      <div style={containerStyle}>
+        <div style={headingStyle}>
+          <h2 style={h2Style}>Compare Speakers</h2>
+          <p style={subtitleStyle}>Side-by-side analysis of qualifications, reach, and value</p>
+        </div>
 
-        {/* Comparison Grid */}
-        <div className="grid grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-start">
-          
-          {/* Jos Column */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-right"
-          >
-            <div className="inline-block mb-8">
-              <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden ring-[3px] ring-blue-500 ring-offset-4 mx-auto md:ml-auto md:mr-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face"
-                  alt="Jos Dirkx"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-neutral-900 mt-4">Jos Dirkx</h3>
-              <p className="text-[13px] text-neutral-500">AI & Education</p>
+        {/* Two Column Layout */}
+        <div style={{ display: 'flex', gap: '48px', marginBottom: '48px' }}>
+          {/* Jos */}
+          <div style={{ flex: 1 }}>
+            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face"
+                alt="Jos Dirkx"
+                style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #3b82f6', margin: '0 auto 16px' }}
+              />
+              <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#171717', marginBottom: '4px' }}>Jos Dirkx</h3>
+              <p style={{ fontSize: '14px', color: '#737373' }}>AI & Education</p>
             </div>
-
-            <div className="space-y-4">
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {metrics.map((m, i) => (
-                <div key={i} className="flex items-center justify-end gap-3">
-                  <span className="text-[13px] font-medium text-neutral-900">{m.jos}%</span>
-                  <div className="w-32 md:w-48 h-2 bg-neutral-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${m.jos}%` }}
-                      transition={{ duration: 0.8, delay: i * 0.1 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-blue-500 rounded-full"
-                      style={{ marginLeft: 'auto' }}
-                    />
+                <div key={i}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                    <span style={{ fontSize: '13px', color: '#737373' }}>{m.label}</span>
+                    <span style={{ fontSize: '13px', fontWeight: '600', color: '#171717' }}>{m.jos}%</span>
+                  </div>
+                  <div style={{ height: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div style={{ width: `${m.jos}%`, height: '100%', backgroundColor: '#3b82f6', borderRadius: '4px' }} />
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-neutral-100">
-              <div className="space-y-2 text-[13px]">
-                <p className="text-neutral-500">Specialty</p>
-                <p className="text-neutral-900 font-medium">Education & AI Integration</p>
-                <div className="flex flex-wrap justify-end gap-1.5 mt-3">
-                  <span className="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-[12px]">AI Ethics</span>
-                  <span className="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-[12px]">EdTech</span>
-                  <span className="px-2.5 py-1 bg-blue-50 text-blue-600 rounded-full text-[12px]">Multimedia</span>
-                </div>
+            <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid #f5f5f5' }}>
+              <p style={{ fontSize: '13px', color: '#737373', marginBottom: '8px' }}>Specialty</p>
+              <p style={{ fontSize: '15px', fontWeight: '500', color: '#171717', marginBottom: '12px' }}>Education & AI Integration</p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>AI Ethics</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>EdTech</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>Multimedia</span>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Center Labels */}
-          <div className="flex flex-col items-center pt-36 md:pt-44">
-            <div className="space-y-4">
-              {metrics.map((m, i) => (
-                <div key={i} className="h-2 flex items-center">
-                  <span className="text-[11px] md:text-[12px] text-neutral-400 whitespace-nowrap">{m.label}</span>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* James Column */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-left"
-          >
-            <div className="inline-block mb-8">
-              <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden ring-[3px] ring-emerald-500 ring-offset-4 mx-auto md:mr-auto md:ml-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
-                  alt="James Taylor"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-neutral-900 mt-4">James Taylor</h3>
-              <p className="text-[13px] text-neutral-500">HR & Creativity</p>
+          {/* James */}
+          <div style={{ flex: 1 }}>
+            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face"
+                alt="James Taylor"
+                style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #10b981', margin: '0 auto 16px' }}
+              />
+              <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#171717', marginBottom: '4px' }}>James Taylor</h3>
+              <p style={{ fontSize: '14px', color: '#737373' }}>HR & Creativity</p>
             </div>
-
-            <div className="space-y-4">
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {metrics.map((m, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-32 md:w-48 h-2 bg-neutral-100 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${m.james}%` }}
-                      transition={{ duration: 0.8, delay: i * 0.1 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-emerald-500 rounded-full"
-                    />
+                <div key={i}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                    <span style={{ fontSize: '13px', color: '#737373' }}>{m.label}</span>
+                    <span style={{ fontSize: '13px', fontWeight: '600', color: '#171717' }}>{m.james}%</span>
                   </div>
-                  <span className="text-[13px] font-medium text-neutral-900">{m.james}%</span>
+                  <div style={{ height: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div style={{ width: `${m.james}%`, height: '100%', backgroundColor: '#10b981', borderRadius: '4px' }} />
+                  </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-neutral-100">
-              <div className="space-y-2 text-[13px]">
-                <p className="text-neutral-500">Specialty</p>
-                <p className="text-neutral-900 font-medium">HR Innovation & Creativity</p>
-                <div className="flex flex-wrap gap-1.5 mt-3">
-                  <span className="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-[12px]">HR Strategy</span>
-                  <span className="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-[12px]">Creativity</span>
-                  <span className="px-2.5 py-1 bg-emerald-50 text-emerald-600 rounded-full text-[12px]">Local PR</span>
-                </div>
+            <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid #f5f5f5' }}>
+              <p style={{ fontSize: '13px', color: '#737373', marginBottom: '8px' }}>Specialty</p>
+              <p style={{ fontSize: '15px', fontWeight: '500', color: '#171717', marginBottom: '12px' }}>HR Innovation & Creativity</p>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <span style={{ padding: '4px 12px', backgroundColor: '#ecfdf5', color: '#059669', borderRadius: '16px', fontSize: '12px' }}>HR Strategy</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#ecfdf5', color: '#059669', borderRadius: '16px', fontSize: '12px' }}>Creativity</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#ecfdf5', color: '#059669', borderRadius: '16px', fontSize: '12px' }}>Local PR</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-16 p-6 md:p-8 bg-neutral-50 rounded-2xl"
-        >
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <div>
-              <p className="text-[13px] text-neutral-500 mb-1">Contact for both speakers</p>
-              <p className="text-lg font-medium text-neutral-900">Wilson</p>
-              <p className="text-[13px] text-neutral-500 mt-2">Direct contact confirmed. No agent intermediary.</p>
-            </div>
-            <div>
-              <p className="text-[13px] text-neutral-500 mb-1">Location</p>
-              <p className="text-lg font-medium text-neutral-900">Both Dubai-based</p>
-              <p className="text-[13px] text-neutral-500 mt-2">No international travel costs required.</p>
-            </div>
+        <div style={{ display: 'flex', gap: '32px', padding: '32px', backgroundColor: '#fafafa', borderRadius: '16px' }}>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontSize: '13px', color: '#737373', marginBottom: '4px' }}>Contact for both speakers</p>
+            <p style={{ fontSize: '18px', fontWeight: '500', color: '#171717' }}>Wilson</p>
+            <p style={{ fontSize: '13px', color: '#737373', marginTop: '8px' }}>Direct contact confirmed. No agent intermediary.</p>
           </div>
-        </motion.div>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontSize: '13px', color: '#737373', marginBottom: '4px' }}>Location</p>
+            <p style={{ fontSize: '18px', fontWeight: '500', color: '#171717' }}>Both Dubai-based</p>
+            <p style={{ fontSize: '13px', color: '#737373', marginTop: '8px' }}>No international travel costs required.</p>
+          </div>
+        </div>
       </div>
     </section>
   );

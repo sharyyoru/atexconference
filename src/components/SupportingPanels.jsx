@@ -1,11 +1,9 @@
-import { motion } from 'framer-motion';
-
 const SupportingPanels = () => {
   const panels = [
     {
       speaker: "Jos Dirkx",
       keynote: "The Human+ Era",
-      color: "blue",
+      color: "#3b82f6",
       sessions: [
         { type: "Panel", title: "AI in the Classroom: Reality vs. Hype", duration: "45 min", panelists: ["Ministry of Education Rep", "EdTech Founder", "School Principal"] },
         { type: "Discussion", title: "Future Skills for Jobs That Don't Exist", duration: "45 min", panelists: ["University Dean", "L&D Director", "AI Ethics Researcher"] },
@@ -15,7 +13,7 @@ const SupportingPanels = () => {
     {
       speaker: "James Taylor",
       keynote: "SuperCollaboration",
-      color: "emerald",
+      color: "#10b981",
       sessions: [
         { type: "Panel", title: "The CHRO's Dilemma: Automation vs. Human Value", duration: "45 min", panelists: ["CHRO (UAE Conglomerate)", "HR Tech Vendor", "Employee Experience Lead"] },
         { type: "Case Studies", title: "Creativity at Scale: Innovation in AI Era", duration: "45 min", panelists: ["Innovation Director (ADNOC)", "Creative Director", "Product Manager"] },
@@ -31,90 +29,64 @@ const SupportingPanels = () => {
   ];
 
   return (
-    <section id="panels" className="py-20 md:py-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-semibold text-neutral-900 tracking-tight mb-4">
+    <section id="panels" style={{ backgroundColor: '#ffffff', padding: '80px 0' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', fontWeight: '600', color: '#171717', marginBottom: '12px' }}>
             Session Recommendations
           </h2>
-          <p className="text-neutral-500 max-w-lg mx-auto">
+          <p style={{ fontSize: '16px', color: '#737373' }}>
             Supporting panels and workshops to maximize keynote impact
           </p>
-        </motion.div>
+        </div>
 
-        <div className="space-y-12">
-          {panels.map((panel, index) => (
-            <motion.div
-              key={panel.speaker}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <span className={`px-3 py-1 rounded-full text-[13px] font-medium ${
-                  panel.color === 'blue' ? 'bg-blue-500 text-white' : 'bg-emerald-500 text-white'
-                }`}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+          {panels.map((panel) => (
+            <div key={panel.speaker}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+                <span style={{ padding: '6px 14px', backgroundColor: panel.color, color: '#ffffff', borderRadius: '16px', fontSize: '13px', fontWeight: '500' }}>
                   {panel.speaker}
                 </span>
-                <span className="text-[14px] text-neutral-500">→ {panel.keynote}</span>
+                <span style={{ fontSize: '14px', color: '#737373' }}>→ {panel.keynote}</span>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
                 {panel.sessions.map((session, i) => (
-                  <div key={i} className="bg-neutral-50 rounded-xl p-5">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`text-[12px] font-medium ${
-                        panel.color === 'blue' ? 'text-blue-600' : 'text-emerald-600'
-                      }`}>
-                        {session.type}
-                      </span>
-                      <span className="text-[12px] text-neutral-400">{session.duration}</span>
+                  <div key={i} style={{ backgroundColor: '#fafafa', borderRadius: '12px', padding: '20px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                      <span style={{ fontSize: '12px', fontWeight: '500', color: panel.color }}>{session.type}</span>
+                      <span style={{ fontSize: '12px', color: '#a3a3a3' }}>{session.duration}</span>
                     </div>
-                    <h4 className="text-[15px] font-medium text-neutral-900 mb-3 leading-snug">
+                    <h4 style={{ fontSize: '15px', fontWeight: '500', color: '#171717', marginBottom: '12px', lineHeight: '1.4' }}>
                       {session.title}
                     </h4>
-                    <div className="space-y-1.5">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                       {session.panelists.map((p, j) => (
-                        <div key={j} className="flex items-center gap-2">
-                          <div className={`w-1 h-1 rounded-full ${
-                            panel.color === 'blue' ? 'bg-blue-400' : 'bg-emerald-400'
-                          }`} />
-                          <span className="text-[13px] text-neutral-600">{p}</span>
+                        <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <div style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: panel.color }} />
+                          <span style={{ fontSize: '13px', color: '#525252' }}>{p}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Additional Suggestions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-16 pt-16 border-t border-neutral-100"
-        >
-          <h3 className="text-lg font-semibold text-neutral-900 mb-6 text-center">Additional Format Options</h3>
-          <div className="grid md:grid-cols-3 gap-4">
+        <div style={{ marginTop: '64px', paddingTop: '48px', borderTop: '1px solid #f5f5f5' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#171717', marginBottom: '24px', textAlign: 'center' }}>Additional Format Options</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {suggestions.map((s, i) => (
-              <div key={i} className="text-center p-5">
-                <h4 className="text-[14px] font-medium text-neutral-900 mb-2">{s.title}</h4>
-                <p className="text-[13px] text-neutral-500">{s.desc}</p>
+              <div key={i} style={{ textAlign: 'center', padding: '16px' }}>
+                <h4 style={{ fontSize: '14px', fontWeight: '500', color: '#171717', marginBottom: '8px' }}>{s.title}</h4>
+                <p style={{ fontSize: '13px', color: '#737373' }}>{s.desc}</p>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
