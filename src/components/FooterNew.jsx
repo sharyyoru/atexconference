@@ -16,7 +16,8 @@ const FooterNew = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <a href="#comparison" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Compare</a>
               <a href="#topics" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Expertise</a>
-              <a href="#panels" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Sessions</a>
+              <a href="#impact" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Impact</a>
+              <a href="#resources" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Resources</a>
               <a href="#costs" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Investment</a>
             </div>
           </div>

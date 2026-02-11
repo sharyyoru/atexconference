@@ -7,7 +7,8 @@ const Navigation = () => {
   const navLinks = [
     { href: '#comparison', label: 'Compare' },
     { href: '#topics', label: 'Expertise' },
-    { href: '#panels', label: 'Sessions' },
+    { href: '#impact', label: 'Impact' },
+    { href: '#resources', label: 'Resources' },
     { href: '#costs', label: 'Investment' },
   ];
 
