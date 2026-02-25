@@ -1,4 +1,4 @@
-const ProfileComparison = () => {
+const ProfileComparison = ({ showPricing = true }) => {
   const metrics = [
     { label: "Global Reach", petar: 92, james: 85, petarSource: "EXPO 2020, Dubai 10X, 3 continents", jamesSource: "750+ leader interviews, 50+ country presence" },
     { label: "UAE Influence", petar: 96, james: 98, petarSource: "Dubai Police, NYU Abu Dhabi, LBS Dubai", jamesSource: "Dubai-based, ADNOC/Emirates/Etisalat speaker" },

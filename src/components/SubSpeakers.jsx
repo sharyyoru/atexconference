@@ -1,4 +1,4 @@
-const SubSpeakers = () => {
+const SubSpeakers = ({ showPricing = true }) => {
   const speakers = [
     {
       name: "Tariq Qureishy",
@@ -77,7 +77,7 @@ const SubSpeakers = () => {
                     {speaker.track} Track
                   </span>
                   <span style={{ fontSize: '12px', color: '#737373' }}>{speaker.location}</span>
-                  <span style={{ fontSize: '13px', fontWeight: '500', color: '#171717' }}>{speaker.fee}</span>
+                  {showPricing && <span style={{ fontSize: '13px', fontWeight: '500', color: '#171717' }}>{speaker.fee}</span>}
                 </div>
               </div>
 

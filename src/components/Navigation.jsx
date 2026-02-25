@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Navigation = () => {
+const Navigation = ({ showPricing = true }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks = showPricing ? [
     { href: '#comparison', label: 'Speakers' },
     { href: '#schedule', label: 'Schedule' },
     { href: '#requirements', label: 'Deliverables' },
     { href: '#costs', label: 'Investment' },
+  ] : [
+    { href: '#comparison', label: 'Speakers' },
+    { href: '#schedule', label: 'Schedule' },
+    { href: '#requirements', label: 'Deliverables' },
   ];
 
   return (
