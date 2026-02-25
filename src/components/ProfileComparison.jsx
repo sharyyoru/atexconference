@@ -1,10 +1,10 @@
 const ProfileComparison = () => {
   const metrics = [
-    { label: "Global Reach", jos: 95, james: 85, josSource: "85K+ social followers, 40+ country keynotes", jamesSource: "750+ leader interviews, 50+ country presence" },
-    { label: "UAE Influence", jos: 88, james: 98, josSource: "3 UAE university partnerships", jamesSource: "Dubai-based, ADNOC/Emirates/Etisalat speaker" },
-    { label: "C-Suite Access", jos: 92, james: 88, josSource: "Ministry-level education advisory", jamesSource: "CHRO network, SHRM preferred speaker" },
-    { label: "Post-Show Value", jos: 90, james: 95, josSource: "Workbooks + implementation guides", jamesSource: "Playbooks + 90-day action plans" },
-    { label: "Engagement", jos: 95, james: 90, josSource: "Multimedia + music integration", jamesSource: "Interactive workshops + exercises" },
+    { label: "Global Reach", petar: 92, james: 85, petarSource: "EXPO 2020, Dubai 10X, 3 continents", jamesSource: "750+ leader interviews, 50+ country presence" },
+    { label: "UAE Influence", petar: 96, james: 98, petarSource: "Dubai Police, NYU Abu Dhabi, LBS Dubai", jamesSource: "Dubai-based, ADNOC/Emirates/Etisalat speaker" },
+    { label: "C-Suite Access", petar: 94, james: 88, petarSource: "Government advisory, policy frameworks", jamesSource: "CHRO network, SHRM preferred speaker" },
+    { label: "Post-Show Value", petar: 88, james: 95, petarSource: "Scientific methodology + frameworks", jamesSource: "Playbooks + 90-day action plans" },
+    { label: "Engagement", petar: 90, james: 90, petarSource: "'Scienced' documentary series host", jamesSource: "Interactive workshops + exercises" },
   ];
 
   const containerStyle = { maxWidth: '1000px', margin: '0 auto', padding: '80px 24px' };
@@ -22,16 +22,16 @@ const ProfileComparison = () => {
 
         {/* Two Column Layout */}
         <div style={{ display: 'flex', gap: '48px', marginBottom: '48px' }}>
-          {/* Jos */}
+          {/* Dr. Petar Stojanov */}
           <div style={{ flex: 1 }}>
             <div style={{ textAlign: 'center', marginBottom: '32px' }}>
               <img 
-                src="https://cdn.mena-speakers.com/speakers/Jos_Dirkx_avatar.jpg"
-                alt="Jos Dirkx"
+                src="https://yt3.googleusercontent.com/ytc/AIdro_kkelWa6B0qphFpE77tWeVASO5QbC_tDoCMdlVgXgvy_BY=s900-c-k-c0x00ffffff-no-rj"
+                alt="Dr. Petar Stojanov"
                 style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #3b82f6', margin: '0 auto 16px' }}
               />
-              <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#171717', marginBottom: '4px' }}>Jos Dirkx</h3>
-              <p style={{ fontSize: '14px', color: '#737373' }}>AI & Education</p>
+              <h3 style={{ fontSize: '20px', fontWeight: '600', color: '#171717', marginBottom: '4px' }}>Dr. Petar Stojanov</h3>
+              <p style={{ fontSize: '14px', color: '#737373' }}>Innovation & Future Foresight</p>
             </div>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -39,10 +39,10 @@ const ProfileComparison = () => {
                 <div key={i}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
                     <span style={{ fontSize: '13px', color: '#737373' }}>{m.label}</span>
-                    <span style={{ fontSize: '13px', fontWeight: '600', color: '#171717' }}>{m.jos}%</span>
+                    <span style={{ fontSize: '13px', fontWeight: '600', color: '#171717' }}>{m.petar}%</span>
                   </div>
                   <div style={{ height: '8px', backgroundColor: '#f5f5f5', borderRadius: '4px', overflow: 'hidden' }}>
-                    <div style={{ width: `${m.jos}%`, height: '100%', backgroundColor: '#3b82f6', borderRadius: '4px' }} />
+                    <div style={{ width: `${m.petar}%`, height: '100%', backgroundColor: '#3b82f6', borderRadius: '4px' }} />
                   </div>
                 </div>
               ))}
@@ -50,11 +50,11 @@ const ProfileComparison = () => {
 
             <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid #f5f5f5' }}>
               <p style={{ fontSize: '13px', color: '#737373', marginBottom: '8px' }}>Specialty</p>
-              <p style={{ fontSize: '15px', fontWeight: '500', color: '#171717', marginBottom: '12px' }}>Education & AI Integration</p>
+              <p style={{ fontSize: '15px', fontWeight: '500', color: '#171717', marginBottom: '12px' }}>Disruptive Innovation & Future Architecture</p>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>AI Ethics</span>
-                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>EdTech</span>
-                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>Multimedia</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>Quantum Physics</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>Policy</span>
+                <span style={{ padding: '4px 12px', backgroundColor: '#eff6ff', color: '#2563eb', borderRadius: '16px', fontSize: '12px' }}>Smart Failure</span>
               </div>
             </div>
           </div>

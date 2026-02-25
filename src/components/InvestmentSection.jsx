@@ -1,18 +1,25 @@
 const InvestmentSection = () => {
-  const speakers = [
-    { name: "Jos Dirkx", color: "#3b82f6", bgColor: "#eff6ff", baseFee: 44040, vat: 2202 },
-    { name: "James Taylor", color: "#10b981", bgColor: "#ecfdf5", baseFee: 53215, vat: 2661 }
+  const mainSpeakers = [
+    { name: "Dr. Petar Stojanov", role: "Education Keynote", color: "#3b82f6", bgColor: "#eff6ff", baseFee: 4224, vat: 211, travel: false },
+    { name: "James Taylor", role: "HR Keynote", color: "#10b981", bgColor: "#ecfdf5", baseFee: 14500, vat: 725, travel: true, travelNote: "Biz class flights + accommodation" }
   ];
 
-  const combinedTotal = speakers[0].baseFee + speakers[0].vat + speakers[1].baseFee + speakers[1].vat;
+  const subSpeakers = [
+    { name: "Tariq Qureishy", role: "Education Track Support", color: "#8b5cf6", bgColor: "#f5f3ff", baseFee: 4224, vat: 211 },
+    { name: "Natalia Sycheva", role: "HR Track Support", color: "#f59e0b", bgColor: "#fffbeb", baseFee: 4224, vat: 211 }
+  ];
+
+  const mainTotal = mainSpeakers.reduce((sum, s) => sum + s.baseFee + s.vat, 0);
+  const subTotal = subSpeakers.reduce((sum, s) => sum + s.baseFee + s.vat, 0);
+  const grandTotal = mainTotal + subTotal;
 
   const included = [
-    { item: "Human+ Era Framework", speaker: "Jos", color: "#3b82f6", bg: "#eff6ff" },
+    { item: "Smart Failure Methodology", speaker: "Dr. Petar", color: "#3b82f6", bg: "#eff6ff" },
     { item: "SuperCollaboration Toolkit", speaker: "James", color: "#10b981", bg: "#ecfdf5" },
-    { item: "Post-Event Content Rights", speaker: "Both", color: "#525252", bg: "#f5f5f5" },
-    { item: "Local PR Support", speaker: "James", color: "#10b981", bg: "#ecfdf5" },
-    { item: "Multimedia Performance", speaker: "Jos", color: "#3b82f6", bg: "#eff6ff" },
-    { item: "Workshop Materials", speaker: "Both", color: "#525252", bg: "#f5f5f5" },
+    { item: "Post-Event Content Rights", speaker: "All", color: "#525252", bg: "#f5f5f5" },
+    { item: "Workshop Materials", speaker: "All", color: "#525252", bg: "#f5f5f5" },
+    { item: "Session Recordings", speaker: "All", color: "#525252", bg: "#f5f5f5" },
+    { item: "Follow-up Webinars", speaker: "Main", color: "#525252", bg: "#f5f5f5" },
   ];
 
   return (
@@ -23,15 +30,20 @@ const InvestmentSection = () => {
             Investment
           </h2>
           <p style={{ fontSize: '16px', color: '#737373' }}>
-            Complete cost breakdown. Both speakers are Dubai-based — no travel costs.
+            Complete cost breakdown for all conference speakers (USD)
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', marginBottom: '24px' }}>
-          {speakers.map((s) => (
+        {/* Main Keynote Speakers */}
+        <p style={{ fontSize: '12px', fontWeight: '500', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '16px' }}>Keynote Speakers</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', marginBottom: '32px' }}>
+          {mainSpeakers.map((s) => (
             <div key={s.name} style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '32px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#171717' }}>{s.name}</h3>
+                <div>
+                  <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#171717' }}>{s.name}</h3>
+                  <p style={{ fontSize: '13px', color: '#737373' }}>{s.role}</p>
+                </div>
                 <span style={{ padding: '4px 12px', backgroundColor: s.bgColor, color: s.color, borderRadius: '16px', fontSize: '12px', fontWeight: '500' }}>
                   Dubai-based
                 </span>
@@ -40,21 +52,43 @@ const InvestmentSection = () => {
               <div style={{ marginBottom: '24px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #f5f5f5' }}>
                   <span style={{ fontSize: '14px', color: '#737373' }}>Speaker Fee</span>
-                  <span style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>{s.baseFee.toLocaleString()} AED</span>
+                  <span style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>${s.baseFee.toLocaleString()} USD</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #f5f5f5' }}>
                   <span style={{ fontSize: '14px', color: '#737373' }}>VAT (5%)</span>
-                  <span style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>{s.vat.toLocaleString()} AED</span>
+                  <span style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>${s.vat.toLocaleString()} USD</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid #f5f5f5' }}>
                   <span style={{ fontSize: '14px', color: '#737373' }}>Travel</span>
-                  <span style={{ fontSize: '14px', color: '#a3a3a3' }}>Not required</span>
+                  <span style={{ fontSize: '14px', color: s.travel ? '#171717' : '#a3a3a3' }}>{s.travel ? s.travelNote : 'Not required'}</span>
                 </div>
               </div>
 
               <div style={{ backgroundColor: s.color, borderRadius: '12px', padding: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Total</span>
-                <span style={{ color: '#ffffff', fontSize: '20px', fontWeight: '600' }}>{(s.baseFee + s.vat).toLocaleString()} AED</span>
+                <span style={{ color: '#ffffff', fontSize: '20px', fontWeight: '600' }}>${(s.baseFee + s.vat).toLocaleString()} USD</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Supporting Speakers */}
+        <p style={{ fontSize: '12px', fontWeight: '500', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '16px' }}>Supporting Speakers</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', marginBottom: '24px' }}>
+          {subSpeakers.map((s) => (
+            <div key={s.name} style={{ backgroundColor: '#ffffff', borderRadius: '16px', padding: '24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <div>
+                  <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#171717' }}>{s.name}</h3>
+                  <p style={{ fontSize: '12px', color: '#737373' }}>{s.role}</p>
+                </div>
+                <span style={{ padding: '4px 12px', backgroundColor: s.bgColor, color: s.color, borderRadius: '16px', fontSize: '11px', fontWeight: '500' }}>
+                  Dubai
+                </span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px', backgroundColor: '#fafafa', borderRadius: '8px' }}>
+                <span style={{ fontSize: '13px', color: '#737373' }}>Fee + VAT</span>
+                <span style={{ fontSize: '16px', fontWeight: '600', color: '#171717' }}>${(s.baseFee + s.vat).toLocaleString()} USD</span>
               </div>
             </div>
           ))}
@@ -79,9 +113,10 @@ const InvestmentSection = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ backgroundColor: '#171717', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
-                <p style={{ color: '#a3a3a3', fontSize: '13px', marginBottom: '8px' }}>Combined Investment</p>
-                <p style={{ color: '#ffffff', fontSize: '32px', fontWeight: '600' }}>{combinedTotal.toLocaleString()} AED</p>
-                <p style={{ color: '#737373', fontSize: '13px', marginTop: '12px' }}>Two keynotes · Full frameworks · No travel</p>
+                <p style={{ color: '#a3a3a3', fontSize: '13px', marginBottom: '8px' }}>Total Speaker Investment</p>
+                <p style={{ color: '#ffffff', fontSize: '32px', fontWeight: '600' }}>${grandTotal.toLocaleString()} USD</p>
+                <p style={{ color: '#737373', fontSize: '13px', marginTop: '12px' }}>4 speakers · 2 tracks · Full frameworks</p>
+                <p style={{ color: '#525252', fontSize: '11px', marginTop: '8px' }}>+ James Taylor travel (biz class + accommodation)</p>
               </div>
 
               <div style={{ marginTop: '16px', padding: '16px', backgroundColor: '#fafafa', borderRadius: '12px' }}>

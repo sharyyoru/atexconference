@@ -5,10 +5,9 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: '#comparison', label: 'Compare' },
-    { href: '#topics', label: 'Expertise' },
-    { href: '#impact', label: 'Impact' },
-    { href: '#resources', label: 'Resources' },
+    { href: '#comparison', label: 'Speakers' },
+    { href: '#schedule', label: 'Schedule' },
+    { href: '#requirements', label: 'Deliverables' },
     { href: '#costs', label: 'Investment' },
   ];
 

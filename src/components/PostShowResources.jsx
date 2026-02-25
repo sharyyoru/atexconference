@@ -1,30 +1,30 @@
 const PostShowResources = () => {
   const resources = [
     {
-      speaker: "Jos Dirkx",
+      speaker: "Dr. Petar Stojanov",
       color: "#3b82f6",
       bgColor: "#eff6ff",
       materials: [
         {
-          type: "Workbook",
-          title: "Human+ Era Implementation Guide",
-          description: "Step-by-step workbook for integrating AI into educational curricula. Includes assessment templates, implementation checklists, and progress tracking tools.",
-          pages: "48 pages",
+          type: "Framework",
+          title: "Smart Failure Methodology Guide",
+          description: "Comprehensive guide to the Smart Failure approach—elegant problem-solving grounded in modern economic theory, evolutionary biology, and scientific method.",
+          pages: "40 pages",
           format: "Digital PDF + Print"
         },
         {
           type: "Playbook",
-          title: "AI Ethics Decision Framework",
-          description: "Practical playbook for making ethical AI decisions in educational settings. Includes case studies, decision trees, and policy templates.",
-          pages: "32 pages",
+          title: "Future Architecture Blueprint",
+          description: "Strategic playbook for designing tomorrow's physical and societal architecture. Includes case studies from EXPO 2020 and Dubai 10X.",
+          pages: "36 pages",
           format: "Digital PDF"
         },
         {
           type: "Toolkit",
-          title: "Future Skills Assessment Kit",
-          description: "Complete toolkit for evaluating and developing future-ready skills in students and educators. Includes rubrics and self-assessment tools.",
-          pages: "24 pages",
-          format: "Digital PDF + Spreadsheets"
+          title: "Innovation Policy Framework Kit",
+          description: "Ready-to-use templates for developing regulatory and policy frameworks around disruptive technologies and national talent acceleration.",
+          pages: "28 pages",
+          format: "Digital PDF + Templates"
         }
       ]
     },

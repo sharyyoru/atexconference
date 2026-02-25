@@ -1,23 +1,23 @@
 const RegionalImpact = () => {
   const speakers = [
     {
-      name: "Jos Dirkx",
+      name: "Dr. Petar Stojanov",
       color: "#3b82f6",
       bgColor: "#eff6ff",
       regionImpact: [
-        { metric: "UAE Education Sector", value: "Direct advisory to 3 major universities" },
-        { metric: "GCC Reach", value: "Keynotes in UAE, Saudi, Qatar, Bahrain" },
-        { metric: "Government Relations", value: "Ministry of Education collaborations" },
-        { metric: "Corporate Training", value: "L&D programs for Fortune 500 regionals" }
+        { metric: "UAE Government Projects", value: "EXPO 2020, Dubai 10X, Dubai Police Transport Unit" },
+        { metric: "Academic Presence", value: "NYU Abu Dhabi, London Business School Dubai" },
+        { metric: "Policy Advisory", value: "Regulatory and policy frameworks for disruptive tech" },
+        { metric: "Media & Thought Leadership", value: "Host of 'Scienced' documentary series" }
       ],
       audienceImpact: [
-        "Transforms how educators approach AI integration",
-        "Provides actionable frameworks for immediate implementation",
-        "Creates lasting mindset shift around human-AI collaboration",
-        "Inspires institutional change through compelling storytelling"
+        "Transforms how leaders approach complex innovation challenges",
+        "Provides scientific methodologies for problem-solving",
+        "Creates frameworks for embracing uncertainty and 'Smart Failure'",
+        "Inspires radical solutions through visionary thinking"
       ],
-      quote: "Jos doesn't just speak—she transforms how institutions think about the future of learning.",
-      testimonial: "— Dr. Ahmed Al-Rashid, Dean of Education, UAE University"
+      quote: "Dr. Stojanov brings the rigor of quantum physics to the art of innovation—a rare and powerful combination.",
+      testimonial: "— Innovation Director, Dubai Government"
     },
     {
       name: "James Taylor",

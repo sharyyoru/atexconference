@@ -1,13 +1,13 @@
 const SupportingPanels = () => {
   const panels = [
     {
-      speaker: "Jos Dirkx",
-      keynote: "The Human+ Era",
+      speaker: "Dr. Petar Stojanov",
+      keynote: "The Scalable Digital Campus",
       color: "#3b82f6",
       sessions: [
         { type: "Panel", title: "AI in the Classroom: Reality vs. Hype", duration: "45 min", panelists: ["Ministry of Education Rep", "EdTech Founder", "School Principal"] },
         { type: "Discussion", title: "Future Skills for Jobs That Don't Exist", duration: "45 min", panelists: ["University Dean", "L&D Director", "AI Ethics Researcher"] },
-        { type: "Workshop", title: "Designing Human+ Learning Experiences", duration: "90 min", panelists: ["Jos Dirkx (Lead)", "Instructional Designer"] }
+        { type: "Workshop", title: "Smart Failure in Education: Scientific Innovation Methods", duration: "90 min", panelists: ["Dr. Petar Stojanov (Lead)", "Tariq Qureishy"] }
       ]
     },
     {
@@ -17,7 +17,7 @@ const SupportingPanels = () => {
       sessions: [
         { type: "Panel", title: "The CHRO's Dilemma: Automation vs. Human Value", duration: "45 min", panelists: ["CHRO (UAE Conglomerate)", "HR Tech Vendor", "Employee Experience Lead"] },
         { type: "Case Studies", title: "Creativity at Scale: Innovation in AI Era", duration: "45 min", panelists: ["Innovation Director (ADNOC)", "Creative Director", "Product Manager"] },
-        { type: "Workshop", title: "Building Your SuperCollaboration Playbook", duration: "90 min", panelists: ["James Taylor (Lead)", "HR Transformation Consultant"] }
+        { type: "Workshop", title: "Building Your SuperCollaboration Playbook", duration: "90 min", panelists: ["James Taylor (Lead)", "Natalia Sycheva"] }
       ]
     }
   ];

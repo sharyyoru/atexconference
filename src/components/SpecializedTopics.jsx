@@ -1,19 +1,19 @@
 const SpecializedTopics = () => {
   const speakers = [
     {
-      name: "Jos Dirkx",
-      specialty: "Education & AI Integration",
+      name: "Dr. Petar Stojanov",
+      specialty: "Disruptive Innovation & Future Foresight",
       color: "#3b82f6",
       bgColor: "#eff6ff",
-      description: "Jos specializes in transforming education through AI integration. Her Human+ Era framework prepares educators, students, and institutions for an AI-augmented future while maintaining human creativity at the core.",
+      description: "Dr. Petar Stojanov is a quantum physicist turned disruptive innovation and future foresight expert. As Managing Partner at Created by Black, he leads teams in developing regulatory and policy frameworks around disruptive technologies, with major projects including EXPO 2020, Dubai 10X, and Dubai Police's Transport and Rescue Unit.",
       topics: [
-        { title: "AI Ethics in Education", desc: "Responsible AI integration in learning environments" },
-        { title: "Future Skills Development", desc: "Preparing students for careers that don't exist yet" },
-        { title: "Human+ Era Philosophy", desc: "Human potential and AI capabilities working together" },
-        { title: "Multimedia Learning", desc: "Integrated music, visuals, and AI for memorable experiences" }
+        { title: "Smart Failure Methodology", desc: "Elegant problem-solving grounded in modern economic theory and evolutionary biology" },
+        { title: "Future Architecture", desc: "Designing tomorrow's physical and societal architecture" },
+        { title: "Disruptive Technologies", desc: "Policy frameworks for accelerating national talent and innovation" },
+        { title: "Scientific Innovation", desc: "Applying rigorous scientific methodologies to complex challenges" }
       ],
-      audience: ["Ministry of Education", "University Deans", "EdTech Leaders", "Training Directors"],
-      quote: "Education is not about replacing teachers with AI—it's about empowering educators to reach every student."
+      audience: ["Government Leaders", "University Deans", "Innovation Directors", "Policy Makers"],
+      quote: "Innovation is as much a science as it is a mindset—embrace uncertainty and create radical solutions for the future."
     },
     {
       name: "James Taylor",

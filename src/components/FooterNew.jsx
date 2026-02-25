@@ -14,10 +14,9 @@ const FooterNew = () => {
           <div>
             <p style={{ fontSize: '12px', fontWeight: '500', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '16px' }}>Navigate</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <a href="#comparison" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Compare</a>
-              <a href="#topics" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Expertise</a>
-              <a href="#impact" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Impact</a>
-              <a href="#resources" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Resources</a>
+              <a href="#comparison" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Speakers</a>
+              <a href="#schedule" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Schedule</a>
+              <a href="#requirements" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Deliverables</a>
               <a href="#costs" style={{ fontSize: '14px', color: '#525252', textDecoration: 'none' }}>Investment</a>
             </div>
           </div>
@@ -26,12 +25,12 @@ const FooterNew = () => {
             <p style={{ fontSize: '12px', fontWeight: '500', color: '#a3a3a3', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '16px' }}>Speakers</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div>
-                <p style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>Jos Dirkx</p>
-                <p style={{ fontSize: '12px', color: '#737373' }}>Education & AI · Dubai</p>
+                <p style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>Dr. Petar Stojanov</p>
+                <p style={{ fontSize: '12px', color: '#737373' }}>Education Keynote · Dubai</p>
               </div>
               <div>
                 <p style={{ fontSize: '14px', fontWeight: '500', color: '#171717' }}>James Taylor</p>
-                <p style={{ fontSize: '12px', color: '#737373' }}>HR & Creativity · Dubai</p>
+                <p style={{ fontSize: '12px', color: '#737373' }}>HR Keynote · Dubai</p>
               </div>
             </div>
           </div>
