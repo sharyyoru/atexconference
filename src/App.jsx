@@ -11,6 +11,7 @@ import PostShowResources from './components/PostShowResources'
 import SpeakerRequirements from './components/SpeakerRequirements'
 import InvestmentSection from './components/InvestmentSection'
 import FooterNew from './components/FooterNew'
+import FutureEvent from './components/FutureEvent'
 
 function PublicView() {
   return (
@@ -55,6 +56,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PublicView />} />
         <Route path="/main" element={<FullView />} />
+        <Route path="/future" element={<FutureEvent />} />
       </Routes>
     </BrowserRouter>
   )
