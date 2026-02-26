@@ -271,11 +271,11 @@ const FutureEvent = () => {
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
                   {trackSpeakers.speakers.map((speaker, i) => (
-                    <div key={i} style={{ textAlign: 'center' }}>
+                    <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                       <img 
                         src={speaker.image}
                         alt={speaker.name}
-                        style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: `2px solid ${trackSpeakers.color}`, marginBottom: '12px' }}
+                        style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: `2px solid ${trackSpeakers.color}`, marginBottom: '12px', display: 'block' }}
                       />
                       <p style={{ fontSize: '14px', fontWeight: '600', color: '#171717', marginBottom: '2px' }}>{speaker.name}</p>
                       <p style={{ fontSize: '11px', color: '#737373', marginBottom: '4px' }}>{speaker.title}</p>
