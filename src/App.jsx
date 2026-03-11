@@ -12,6 +12,7 @@ import SpeakerRequirements from './components/SpeakerRequirements'
 import InvestmentSection from './components/InvestmentSection'
 import FooterNew from './components/FooterNew'
 import FutureEvent from './components/FutureEvent'
+import CommercialModel from './components/CommercialModel'
 
 function PublicView() {
   return (
@@ -57,6 +58,7 @@ function App() {
         <Route path="/" element={<PublicView />} />
         <Route path="/main" element={<FullView />} />
         <Route path="/future" element={<FutureEvent />} />
+        <Route path="/commercials" element={<CommercialModel />} />
       </Routes>
     </BrowserRouter>
   )
